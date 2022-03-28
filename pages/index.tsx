@@ -1,10 +1,11 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-
 import styles from '../styles/Home.module.css';
-
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Head from '../componenets/Head';
+
+import { project } from '../utils/const';
+
 const Home: NextPage = () => {
 	const { data: session, status } = useSession();
 	return (
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
 			<Head />
 			<main className={styles.main}>
 				<h1 className={styles.title}>
-					Welcome to <a href="#">Vangover</a>
+					Welcome to <a href="#">{project.name}</a>
 				</h1>
 				<br />
 
