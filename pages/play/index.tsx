@@ -1,24 +1,29 @@
 import type { NextPage } from 'next';
 import styles from '../../styles/Home.module.css';
+import playStyles from '../../styles/Play.module.css';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Head from '../../componenets/Head';
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import { play, button, logic } from './constants';
 
 const Game: NextPage = () => {
-	// const rounds = logic.round
-	type round = 0 | 1 | 2 | 3 | 4 | 5; //there will only be 5 rounds
+	type chanceType = 1 | 2 | 3 | 5; //multiplying the wager points
 
 	const { data: session, status } = useSession();
 	const [loading, setLoading] = useState(false);
 	const [didWin, setDidWin] = useState<boolean | null>(null);
-	const [roundCount, setRoundCount] = useState<round>(0);
+	const [currentRound, setCurrentRound] = useState<number>(0);
+	const [currentChance, setCurrentChance] = useState<chanceType>(1);
+
+	useEffect(() => {
+		if (currentRound === logic.maxRound) {
+			console.log(currentRound, 'End of round');
+			setCurrentRound(0);
+		}
+	}, [currentRound]);
 
 	const startRoll = () => {
 		setLoading(true);
-		setDidWin(null);
-
 		const output = Math.random(); //randomly generate a value between 0.0 to 1.0 (float value)
 		if (output < logic.chance / 100) {
 			processResult(true); //true for win
@@ -31,8 +36,15 @@ const Game: NextPage = () => {
 		const timer = setTimeout(() => {
 			setDidWin(result);
 			setLoading(false);
-		}, 1000);
+			setCurrentRound(currentRound + 1);
+		}, logic.waitingTime * 1000);
 		return () => clearTimeout(timer);
+	};
+
+	const restartSession = () => {
+		setDidWin(null);
+		setLoading(false);
+		setCurrentRound(0);
 	};
 
 	const getResult = () => {
@@ -46,14 +58,38 @@ const Game: NextPage = () => {
 		}
 	};
 
+	const getRandomLoadingMsg = () => {
+		return `${play.loading[Math.floor(Math.random() * play.loading.length)]} ...`;
+	};
+
 	return (
 		<div className={styles.container}>
 			<Head title={play.headTitle} />
 			<main className={styles.main}>
-				<h4>{loading ? play.loading : getResult()}</h4>
-				<button onClick={startRoll} disabled={loading}>
-					{loading ? button.loading : !didWin ? button.start : button.retry}
-				</button>
+				<div>
+					{didWin !== false &&
+						Array.from({ length: logic.maxRound }, (_, i) => i + 1).map((val, index) => {
+							return (
+								<p
+									key={index}
+									className={index === currentRound ? playStyles.roundActive : playStyles.round}
+								>
+									{val}
+								</p>
+							);
+						})}
+				</div>
+
+				<h6>{loading ? getRandomLoadingMsg() : getResult()}</h6>
+				{didWin !== false ? (
+					<button onClick={startRoll} disabled={loading}>
+						{loading ? button.loading : !didWin ? button.start : button.retry}
+					</button>
+				) : (
+					<button onClick={restartSession} disabled={loading}>
+						{`Restart session`}
+					</button>
+				)}
 			</main>
 		</div>
 	);
