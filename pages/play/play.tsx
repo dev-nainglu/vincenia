@@ -1,7 +1,12 @@
 import { NextPage } from 'next';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Play: NextPage = () => {
-	return <div>hello from play</div>;
+	const pointsData = useSelector<number>((state: any) => state.play.points);
+	const [points] = useState(pointsData);
+
+	return <div>You have {points} points</div>;
 };
 
 export default Play;
