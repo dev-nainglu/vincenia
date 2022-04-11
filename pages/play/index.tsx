@@ -5,16 +5,29 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import Head from '../../componenets/Head';
 import { useEffect, useState } from 'react';
 import { play, button, logic } from './constants';
+import Play from './play';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateResult, updateRound } from '../../ducks/modules/Play';
+import { getResultString, getRandomLoadingMsg } from './helpers';
 
 const Game: NextPage = () => {
 	type chanceType = 1 | 2 | 3 | 5; //multiplying the wager points
 
+	const dispatch = useDispatch();
 	const { data: session, status } = useSession();
-	const [points, setPoints] = useState<number>(logic.defaultPoints);
 	const [loading, setLoading] = useState(false);
-	const [didWin, setDidWin] = useState<boolean | null>(null);
-	const [currentRound, setCurrentRound] = useState<number>(0);
 	const [currentChance, setCurrentChance] = useState<chanceType>(1);
+
+	const currentRound = useSelector((state: any) => state.play.currentRound);
+	const didWin = useSelector((state: any) => state.play.didWin);
+
+	const setCurrentRound = (round: number) => {
+		dispatch(updateRound(round));
+	};
+
+	const setDidWin = (result: boolean | null) => {
+		dispatch(updateResult(result));
+	};
 
 	useEffect(() => {
 		if (currentRound === logic.maxRound) {
@@ -26,14 +39,11 @@ const Game: NextPage = () => {
 	const startRoll = () => {
 		setLoading(true);
 		const output = Math.random(); //randomly generate a value between 0.0 to 1.0 (float value)
-		if (output < logic.chance / 100) {
-			processResult(true); //true for win
-		} else {
-			processResult(false); //false for lose
-		}
+		processResult(output < logic.chance / 100 ? true : false);
 	};
 
 	const processResult = (result: boolean) => {
+		// main logic
 		const timer = setTimeout(() => {
 			setDidWin(result);
 			setLoading(false);
@@ -48,21 +58,6 @@ const Game: NextPage = () => {
 		setCurrentRound(0);
 	};
 
-	const getResult = () => {
-		switch (didWin) {
-			case true:
-				return play.winnerString;
-			case false:
-				return play.loserString;
-			default:
-				return play.defaultTitle;
-		}
-	};
-
-	const getRandomLoadingMsg = () => {
-		return `${play.loading[Math.floor(Math.random() * play.loading.length)]} ...`;
-	};
-
 	return (
 		<div className={styles.container}>
 			<Head title={play.headTitle} />
@@ -70,7 +65,7 @@ const Game: NextPage = () => {
 				<div>
 					{didWin !== false && (
 						<>
-							<p>{points}</p>
+							<Play />
 							{Array.from({ length: logic.maxRound }, (_, i) => i + 1).map((val, index) => {
 								return (
 									<p
@@ -85,7 +80,7 @@ const Game: NextPage = () => {
 					)}
 				</div>
 
-				<h6>{loading ? getRandomLoadingMsg() : getResult()}</h6>
+				<h6>{loading ? getRandomLoadingMsg() : getResultString(didWin)}</h6>
 				{didWin !== false ? (
 					<button onClick={startRoll} disabled={loading}>
 						{loading ? button.loading : !didWin ? button.start : button.retry}
