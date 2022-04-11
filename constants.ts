@@ -17,6 +17,7 @@ export const button = {
 	loading: `Loading`,
 	start: `Start rolling`,
 	retry: `Roll again?`,
+	wage: `Wage`,
 };
 
 export const logic = {
@@ -25,4 +26,6 @@ export const logic = {
 	minRound: 1,
 	maxRound: 5,
 	waitingTime: 2, //seconds
+
+	minWageAmount: 100,
 };

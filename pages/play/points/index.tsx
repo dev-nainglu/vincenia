@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { useSelector } from 'react-redux';
-import { logic } from '../../play/play/constants';
+import { logic } from '../.../../../../constants';
 
 const Points: NextPage<PointsProp> = ({ points, wageAmount, didWin }) => {
 	const currentRound = useSelector((state: any) => state.play.currentRound);
