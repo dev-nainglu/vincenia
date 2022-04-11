@@ -5,9 +5,12 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import Head from '../componenets/Head';
 
 import { project } from '../utils/const';
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
 	const { data: session, status } = useSession();
+	const router = useRouter();
+
 	return (
 		<div className={styles.container}>
 			<Head />
@@ -17,7 +20,7 @@ const Home: NextPage = () => {
 				</h1>
 				<br />
 
-				{status === 'authenticated' ? (
+				{/* {status === 'authenticated' ? (
 					<div>
 						<img src={session?.user?.image ?? ''} alt="" />
 						<br />
@@ -27,7 +30,8 @@ const Home: NextPage = () => {
 					</div>
 				) : (
 					<button onClick={() => signIn('discord')}>Login with discord</button>
-				)}
+				)} */}
+				<button onClick={() => router.push('/play')}>State of play</button>
 			</main>
 
 			<footer className={styles.footer}>
