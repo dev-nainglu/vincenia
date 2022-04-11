@@ -10,8 +10,8 @@ import {
 	updateWage,
 } from '../../../ducks/modules/Play';
 import { RootState } from '../../../ducks/Store';
-import { button, logic } from './constants';
-import { getRandomLoadingMsg, getResultString } from './helpers';
+import { button, logic } from '../../../constants';
+import { getRandomLoadingMsg, getResultString } from '../../../helpers';
 import playStyles from '../../../styles/Play.module.css';
 
 const Play: NextPage = () => {

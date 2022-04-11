@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import styles from '../../styles/Home.module.css';
 import Head from '../../componenets/Head';
-import { play } from './play/constants';
+import { play } from '../../constants';
 import Play from './play';
 import { useSelector } from 'react-redux';
 import Wage from './wage';

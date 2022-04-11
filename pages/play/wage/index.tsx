@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateWage } from '../../../ducks/modules/Play';
 import { RootState } from '../../../ducks/Store';
 
-import { button, logic } from './constants';
+import { button, logic } from '../../../constants';
 
 const Wage: NextPage = () => {
 	const pointsData = useSelector((state: RootState) => state.play.points);

@@ -1,5 +1,5 @@
 import { AnyAction, Dispatch } from 'redux';
-import { logic } from '../../pages/play/play/constants';
+import { logic } from '../../constants';
 
 interface State {
 	points: number;
