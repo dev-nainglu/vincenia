@@ -6,5 +6,6 @@ const reducer = combineReducers({
 	play,
 });
 
+export type RootState = ReturnType<typeof reducer>;
 const store = createStore(reducer, applyMiddleware(thunk));
 export default store;
