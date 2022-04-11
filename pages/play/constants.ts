@@ -20,6 +20,7 @@ export const button = {
 };
 
 export const logic = {
+	defaultPoints: 1000,
 	chance: 20, //1 - 99 :this is percentage value
 	minRound: 1,
 	maxRound: 5,

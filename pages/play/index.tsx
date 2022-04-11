@@ -10,6 +10,7 @@ const Game: NextPage = () => {
 	type chanceType = 1 | 2 | 3 | 5; //multiplying the wager points
 
 	const { data: session, status } = useSession();
+	const [points, setPoints] = useState<number>(logic.defaultPoints);
 	const [loading, setLoading] = useState(false);
 	const [didWin, setDidWin] = useState<boolean | null>(null);
 	const [currentRound, setCurrentRound] = useState<number>(0);
@@ -67,17 +68,21 @@ const Game: NextPage = () => {
 			<Head title={play.headTitle} />
 			<main className={styles.main}>
 				<div>
-					{didWin !== false &&
-						Array.from({ length: logic.maxRound }, (_, i) => i + 1).map((val, index) => {
-							return (
-								<p
-									key={index}
-									className={index === currentRound ? playStyles.roundActive : playStyles.round}
-								>
-									{val}
-								</p>
-							);
-						})}
+					{didWin !== false && (
+						<>
+							<p>{points}</p>
+							{Array.from({ length: logic.maxRound }, (_, i) => i + 1).map((val, index) => {
+								return (
+									<p
+										key={index}
+										className={index === currentRound ? playStyles.roundActive : playStyles.round}
+									>
+										{val}
+									</p>
+								);
+							})}
+						</>
+					)}
 				</div>
 
 				<h6>{loading ? getRandomLoadingMsg() : getResult()}</h6>
