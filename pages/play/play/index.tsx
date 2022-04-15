@@ -15,16 +15,19 @@ import { getRandomLoadingMsg, getResultString } from '../../../helpers';
 import playStyles from '../../../styles/Play.module.css';
 
 const Play: NextPage = () => {
-	type chanceType = 1 | 2 | 3 | 5; //multiplying the wager points
-
 	const dispatch = useDispatch();
 	const { data: session, status } = useSession();
 	const [loading, setLoading] = useState(false);
-	const pointsData = useSelector<number>((state: RootState) => state.play.points);
+	// const pointsData = useSelector<number>((state: RootState) => state.play.points);
 	const wageAmount = useSelector((state: RootState) => state.play.wageAmount);
-
 	const currentRound = useSelector((state: any) => state.play.currentRound);
 	const didWin = useSelector((state: any) => state.play.didWin);
+
+	const stakeAmount = wageAmount * (currentRound + 1);
+
+	useEffect(() => {
+		dispatch(updateWage(stakeAmount));
+	}, [currentRound]);
 
 	const setCurrentRound = (round: number) => {
 		dispatch(updateRound(round));
@@ -45,9 +48,9 @@ const Play: NextPage = () => {
 
 		const timer = setTimeout(() => {
 			if (result === true) {
-				dispatch(addPoints(wageAmount));
+				dispatch(addPoints(stakeAmount));
 			} else {
-				dispatch(subtractPoints(wageAmount));
+				dispatch(subtractPoints(stakeAmount));
 			}
 			setDidWin(result);
 			setLoading(false);
@@ -83,15 +86,15 @@ const Play: NextPage = () => {
 
 			<h6 className="center">{loading ? getRandomLoadingMsg() : getResultString(didWin)}</h6>
 
-			{didWin !== false && currentRound !== logic.maxRound ? (
+			{didWin !== false && currentRound !== logic.maxRound && (
 				<button onClick={startRoll} disabled={loading}>
 					{loading ? button.loading : !didWin ? button.start : button.retry}
 				</button>
-			) : (
-				<button onClick={restartSession} disabled={loading}>
-					{`Restart session`}
-				</button>
 			)}
+			<br />
+			<button onClick={restartSession} disabled={loading}>
+				{button.cancel}
+			</button>
 		</>
 	);
 };

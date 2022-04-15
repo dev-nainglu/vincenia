@@ -13,11 +13,15 @@ const Game: NextPage = () => {
 	const pointsData = useSelector((state: RootState) => state.play.points);
 	const didWin = useSelector((state: RootState) => state.play.didWin);
 
+	const currentRound = useSelector((state: any) => state.play.currentRound);
+	const stakeAmount = wageAmount * (currentRound + 1);
+
 	return (
 		<div className={styles.container}>
 			<Head title={play.headTitle} />
 			<main className={styles.main}>
 				<Points points={pointsData} wageAmount={wageAmount} didWin={didWin} />
+				<br /> <br />
 				{wageAmount ? <Play /> : <Wage />}
 			</main>
 		</div>
