@@ -18,11 +18,12 @@ export const button = {
 	start: `Start rolling`,
 	retry: `Roll again?`,
 	wage: `Wage`,
+	cancel: `Cancel`,
 };
 
 export const logic = {
 	defaultPoints: 1000,
-	chance: 20, //1 - 99 :this is percentage value
+	chance: 99, //1 - 99 :this is percentage value
 	minRound: 1,
 	maxRound: 5,
 	waitingTime: 2, //seconds

@@ -5,7 +5,6 @@ interface State {
 	points: number;
 	round: number;
 	loading: boolean;
-	wage: number;
 	wageAmount: number | null;
 	currentRound: number;
 	didWin: boolean | null;
@@ -13,7 +12,6 @@ interface State {
 
 const initialState = {
 	points: logic.defaultPoints,
-	wage: 2,
 	wageAmount: null,
 	currentRound: 0,
 	didWin: null,
