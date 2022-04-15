@@ -30,6 +30,7 @@ const Wage: NextPage = () => {
 				disabled
 			/>
 			<br />
+			<br />
 			<button onClick={setWage} disabled={userWage > pointsData}>
 				{button.wage}
 			</button>
