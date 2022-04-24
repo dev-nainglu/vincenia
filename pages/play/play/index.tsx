@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
 	addPoints,
 	subtractPoints,
+	updateLoadingStatus,
 	updateResult,
 	updateRound,
 	updateWage,
@@ -17,7 +18,7 @@ import playStyles from '../../../styles/Play.module.css';
 const Play: NextPage = () => {
 	const dispatch = useDispatch();
 	const { data: session, status } = useSession();
-	const [loading, setLoading] = useState(false);
+	const loading = useSelector((state: RootState) => state.play.loading);
 	// const pointsData = useSelector<number>((state: RootState) => state.play.points);
 	const wageAmount = useSelector((state: RootState) => state.play.wageAmount);
 	const currentRound = useSelector((state: any) => state.play.currentRound);
@@ -31,6 +32,10 @@ const Play: NextPage = () => {
 
 	const setCurrentRound = (round: number) => {
 		dispatch(updateRound(round));
+	};
+
+	const setLoading = (status: boolean) => {
+		dispatch(updateLoadingStatus(status));
 	};
 
 	const setDidWin = (result: boolean | null) => {
