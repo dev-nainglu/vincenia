@@ -25,6 +25,11 @@ export const UPDATE_ROUND = 'update_round';
 
 const PlayReducer = (state = initialState, action: AnyAction) => {
 	switch (action.type) {
+		case 'UPDATE_LOADING_STATUS':
+			return {
+				...state,
+				loading: action.payload,
+			};
 		case 'ADD_POINTS':
 			return {
 				...state,
@@ -58,6 +63,15 @@ const PlayReducer = (state = initialState, action: AnyAction) => {
 		default:
 			return state;
 	}
+};
+
+export const updateLoadingStatus = (status: boolean) => {
+	return async (dispatch: Dispatch) => {
+		dispatch({
+			type: 'UPDATE_LOADING_STATUS',
+			payload: status,
+		});
+	};
 };
 
 export const addPoints = (points: number) => {

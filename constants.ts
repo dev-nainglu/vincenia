@@ -26,7 +26,7 @@ export const logic = {
 	chance: 20, //1 - 99 :this is percentage value
 	minRound: 1,
 	maxRound: 5,
-	waitingTime: 2, //seconds
+	waitingTime: 10, //seconds
 
 	minWageAmount: 100,
 };
