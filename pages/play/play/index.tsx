@@ -51,17 +51,25 @@ const Play: NextPage = () => {
 	const processResult = (result: boolean) => {
 		// main logic
 
-		const timer = setTimeout(() => {
-			if (result === true) {
-				dispatch(addPoints(stakeAmount));
-			} else {
-				dispatch(subtractPoints(stakeAmount));
-			}
-			setDidWin(result);
-			setLoading(false);
-			setCurrentRound(currentRound + 1);
-		}, logic.waitingTime * 1000);
-		return () => clearTimeout(timer);
+		if (result === true) {
+			dispatch(addPoints(stakeAmount));
+		} else {
+			dispatch(subtractPoints(stakeAmount));
+		}
+		setDidWin(result);
+		setCurrentRound(currentRound + 1);
+
+		// const timer = setTimeout(() => {
+		// 	if (result === true) {
+		// 		dispatch(addPoints(stakeAmount));
+		// 	} else {
+		// 		dispatch(subtractPoints(stakeAmount));
+		// 	}
+		// 	setDidWin(result);
+		// 	setLoading(false);
+		// 	setCurrentRound(currentRound + 1);
+		// }, logic.waitingTime * 1000);
+		// return () => clearTimeout(timer);
 	};
 
 	const restartSession = () => {
