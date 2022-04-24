@@ -1,3 +1,13 @@
+.pointsInfo {
+	font-weight: bold;
+	color: white;
+	margin: 0;
+}
+
+.button {
+	color: orange;
+}
+
 .round {
 	display: inline;
 	margin: 2rem;
