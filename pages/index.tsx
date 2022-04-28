@@ -83,6 +83,71 @@ const Home: NextPage = () => {
 				</div>
 			</div>
 			{/* End Become a Vincenian */}
+
+			{/* Vaniac Russian Roulette	 */}
+			<div className="container mx-auto pt-6">
+				<h2 className="text-xl text-center">- Vaniac Russian Roulette -</h2>
+				<div className="grid grid-cols-7 lg:gap-20 sm:gap-10 gap-5 pt-4 h-96 content-center">
+					<div className="col-span-2 text-center">Gun icon</div>
+					<div className="col-span-3 text-center">[Comming soon]</div>
+					<div className="col-span-2 text-center">
+						<button className="border rounded border-black px-3">Play</button>
+					</div>
+				</div>
+				<div className="pt-4 content-center">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magni veritatis aliquam!
+						Dolore iure corrupti libero esse perspiciatis? Vitae nam modi consequuntur esse quasi
+						dolore animi, ducimus labore ex sequi.
+					</p>
+				</div>
+			</div>
+			{/* End Vaniac Russian Roulette	 */}
+
+			{/* FAQ */}
+			<div className="container mx-auto pt-8">
+				<h2 className="text-xl">- FAQ -</h2>
+				<div className=" h-96 mt-6 bg-slate-300 content-center"></div>
+			</div>
+			{/* End FAQ */}
+
+			{/* Team */}
+			<div className="container mx-auto pt-8">
+				<h2 className="text-xl">- TEAM -</h2>
+				<div className="mt-6 bg-slate-300 content-center">
+					<div className="grid grid-cols-4 lg:gap-20 sm:gap-10 gap-5 p-4">
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="m-4 text-center bg-yellow-400">Mofo 1</p>
+						</div>
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="m-4 text-center bg-cyan-400">Mofo 2</p>
+						</div>
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="m-4 text-center bg-orange-400">Mofo 3</p>
+						</div>
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="m-4 text-center bg-blue-400">Mofo 4</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/* End Team */}
 		</div>
 	);
 };
