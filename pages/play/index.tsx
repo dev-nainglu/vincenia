@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import ReactPlayer from 'react-player';
 
 import styles from '../../styles/Home.module.css';
-import Head from '../../componenets/Head';
+import Head from '../../components/Head';
 import { play } from '../../constants';
 import Play from './play';
 import { useDispatch, useSelector } from 'react-redux';
