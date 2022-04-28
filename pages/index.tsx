@@ -7,6 +7,10 @@ import { project } from '../utils/const';
 import { useRouter } from 'next/router';
 import Head from '../components/Head';
 import Header from '../components/Header';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+const customRenderItem = (item: any, props: any) => <item.type {...item.props} {...props} />;
 
 const Home: NextPage = () => {
 	const { data: session, status } = useSession();
@@ -46,41 +50,89 @@ const Home: NextPage = () => {
 			{/* Become a Vincenian */}
 			<div className="container mx-auto pt-6">
 				<h2 className="text-xl text-center">Become a Vincenian</h2>
-				<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
-					<div>
-						<img
-							src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-							alt=""
-						/>
-						<p className="pt-4">
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae labore recusandae
-							voluptas ex quam, consectetur iure tempora saepe est qui harum vel incidunt expedita
-							minus aspernatur? Ipsum quia rem earum.
-						</p>
+				<Carousel
+					renderItem={customRenderItem}
+					autoPlay={true}
+					showArrows={false}
+					showIndicators={false}
+					showThumbs={false}
+					showStatus={false}
+					swipeable={true}
+					infiniteLoop={true}
+				>
+					<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="pt-4">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae labore recusandae
+								voluptas ex quam, consectetur iure tempora saepe est qui harum vel incidunt expedita
+								minus aspernatur? Ipsum quia rem earum.
+							</p>
+						</div>
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="pt-4">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quos eum iste
+								corrupti consequuntur, consequatur pariatur nemo odio fugit magni adipisci
+								voluptatibus velit inventore exercitationem hic dicta consectetur temporibus
+								corporis?
+							</p>
+						</div>
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="pt-4">
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae,
+								reprehenderit, atque error, dolore eaque assumenda pariatur est harum quibusdam
+								saepe dicta eos. Fugit, repellendus similique eveniet recusandae nam aspernatur?
+							</p>
+						</div>
 					</div>
-					<div>
-						<img
-							src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-							alt=""
-						/>
-						<p className="pt-4">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quos eum iste
-							corrupti consequuntur, consequatur pariatur nemo odio fugit magni adipisci
-							voluptatibus velit inventore exercitationem hic dicta consectetur temporibus corporis?
-						</p>
+					<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="pt-4">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae labore recusandae
+								voluptas ex quam, consectetur iure tempora saepe est qui harum vel incidunt expedita
+								minus aspernatur? Ipsum quia rem earum.
+							</p>
+						</div>
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="pt-4">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quos eum iste
+								corrupti consequuntur, consequatur pariatur nemo odio fugit magni adipisci
+								voluptatibus velit inventore exercitationem hic dicta consectetur temporibus
+								corporis?
+							</p>
+						</div>
+						<div>
+							<img
+								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
+								alt=""
+							/>
+							<p className="pt-4">
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae,
+								reprehenderit, atque error, dolore eaque assumenda pariatur est harum quibusdam
+								saepe dicta eos. Fugit, repellendus similique eveniet recusandae nam aspernatur?
+							</p>
+						</div>
 					</div>
-					<div>
-						<img
-							src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-							alt=""
-						/>
-						<p className="pt-4">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae,
-							reprehenderit, atque error, dolore eaque assumenda pariatur est harum quibusdam saepe
-							dicta eos. Fugit, repellendus similique eveniet recusandae nam aspernatur?
-						</p>
-					</div>
-				</div>
+				</Carousel>
 			</div>
 			{/* End Become a Vincenian */}
 
