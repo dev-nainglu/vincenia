@@ -9,6 +9,9 @@ import Head from '../components/Head';
 import Header from '../components/Header';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import backgroundImage from '../public/assets/images/background.jpg';
+import gunShotRight from '../public/assets/images/gunshot_right.png';
+import gunShotLeft from '../public/assets/images/gunshot_left.png';
 
 const customRenderItem = (item: any, props: any) => <item.type {...item.props} {...props} />;
 
@@ -19,7 +22,14 @@ const Home: NextPage = () => {
 		return 1 + '1';
 	};
 	return (
-		<div className="mx-auto p-6">
+		<div
+			className="mx-auto p-6"
+			style={{
+				backgroundImage: `url(${backgroundImage.src})`,
+				// backgroundRepeat: 'no-repeat',
+				// backgroundSize: 'cover',
+			}}
+		>
 			<Head />
 			<Header />
 			<div className="flex flex-col items-center justify-center m-6">
@@ -39,10 +49,14 @@ const Home: NextPage = () => {
 					</p>
 				</div>
 
-				<div className="grid lg:grid-cols-8 md:grid-cols-6 sm:grid-cols-5 grid-cols-3 gap-4 pt-4">
+				<div
+					style={{ position: 'relative', zIndex: 1 }}
+					className="grid lg:grid-cols-8 md:grid-cols-6 sm:grid-cols-5 grid-cols-3 gap-4 pt-4"
+				>
 					<button className="border rounded border-black px-3">Twitter</button>
 					<button className="border rounded border-black px-3">Discord</button>
 					<button className="border rounded border-black px-3">Mint</button>
+					<img src={gunShotRight.src} className="lg:visible invisible" alt="" />
 				</div>
 			</div>
 			{/* End about Vincenia */}
@@ -140,10 +154,17 @@ const Home: NextPage = () => {
 			<div className="container mx-auto pt-6">
 				<h2 className="text-xl text-center">- Vaniac Russian Roulette -</h2>
 				<div className="grid grid-cols-7 lg:gap-20 sm:gap-10 gap-5 pt-4 h-96 content-center">
-					<div className="col-span-2 text-center">Gun icon</div>
-					<div className="col-span-3 text-center">[Comming soon]</div>
 					<div className="col-span-2 text-center">
-						<button className="border rounded border-black px-3">Play</button>
+						<img src={gunShotLeft.src} alt="" />
+					</div>
+					<div className="col-span-3 text-center">[Coming soon]</div>
+					<div className="col-span-2 text-center">
+						<button
+							className="border rounded border-black px-3"
+							onClick={() => alert('Be patient son!')}
+						>
+							Play
+						</button>
 					</div>
 				</div>
 				<div className="pt-4 content-center">
