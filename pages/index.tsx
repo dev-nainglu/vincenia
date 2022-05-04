@@ -12,35 +12,45 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import backgroundImage from '../public/assets/images/background.jpg';
 import gunShotRight from '../public/assets/images/gunshot_right.png';
 import gunShotLeft from '../public/assets/images/gunshot_left.png';
+import vinceniaAbout from '../public/assets/images/vincenia.jpg';
+
+import vincenian1 from '../public/assets/images/vincenian/1.jpg';
+import vincenian3 from '../public/assets/images/vincenian/3.jpg';
+import vincenian4 from '../public/assets/images/vincenian/4.jpg';
 
 const customRenderItem = (item: any, props: any) => <item.type {...item.props} {...props} />;
 
 const Home: NextPage = () => {
 	const { data: session, status } = useSession();
 	const router = useRouter();
-	const banana = () => {
-		return 1 + '1';
-	};
+
 	return (
 		<div
 			className="mx-auto p-6"
 			style={{
-				backgroundImage: `url(${backgroundImage.src})`,
+				backgroundColor: '#2D2D36',
+				color: '#DFC7AB',
+				// backgroundImage: `url(${backgroundImage.src})`,
 				// backgroundRepeat: 'no-repeat',
 				// backgroundSize: 'cover',
 			}}
 		>
 			<Head />
 			<Header />
-			<div className="flex flex-col items-center justify-center m-6">
-				<p>Contract</p>
-				<p>of</p>
-				<h1 className="text-2xl">Vincenia</h1>
-			</div>
 			{/* About Vincenia */}
 			<div className="container mx-auto">
-				<h2 className="text-xl font-bold">About Vincenia</h2>
-				<div className="grid mr-20 pt-4">
+				<img src={vinceniaAbout.src} alt="" />
+				<div style={{ position: 'relative', zIndex: 1 }}>
+					<h2 className="text-xl font-bold py-8">About Vincenia</h2>
+					<img
+						src={gunShotRight.src}
+						style={{ position: 'absolute', top: 35 }}
+						className="lg:visible invisible"
+						alt=""
+					/>
+				</div>
+
+				<div className="grid mr-20">
 					<p>
 						Vincenia is a decentralized, open-source, and decentralized Lorem ipsum dolor sit, amet
 						consectetur adipisicing elit. Temporibus quibusdam quod laborum veniam doloribus
@@ -48,23 +58,12 @@ const Home: NextPage = () => {
 						nulla, ullam ratione numquam.
 					</p>
 				</div>
-
-				<div
-					style={{ position: 'relative', zIndex: 1 }}
-					className="grid lg:grid-cols-8 md:grid-cols-6 sm:grid-cols-5 grid-cols-3 gap-4 pt-4"
-				>
-					<button className="border rounded border-black px-3">Twitter</button>
-					<button className="border rounded border-black px-3">Discord</button>
-					<button className="border rounded border-black px-3">Mint</button>
-					<img src={gunShotRight.src} className="lg:visible invisible" alt="" />
-				</div>
 			</div>
 			{/* End about Vincenia */}
-
 			{/* Become a Vincenian */}
-			<div className="container mx-auto pt-6">
-				<h2 className="text-xl text-center">Become a Vincenian</h2>
-				<Carousel
+			<div className="container mx-auto py-8">
+				{/* <h2 className="text-xl text-center">Become a Vincenian</h2> */}
+				{/* <Carousel
 					renderItem={customRenderItem}
 					autoPlay={true}
 					showArrows={false}
@@ -73,85 +72,42 @@ const Home: NextPage = () => {
 					showStatus={false}
 					swipeable={true}
 					infiniteLoop={true}
-				>
-					<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
-						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="pt-4">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae labore recusandae
-								voluptas ex quam, consectetur iure tempora saepe est qui harum vel incidunt expedita
-								minus aspernatur? Ipsum quia rem earum.
-							</p>
-						</div>
-						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="pt-4">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quos eum iste
-								corrupti consequuntur, consequatur pariatur nemo odio fugit magni adipisci
-								voluptatibus velit inventore exercitationem hic dicta consectetur temporibus
-								corporis?
-							</p>
-						</div>
-						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="pt-4">
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae,
-								reprehenderit, atque error, dolore eaque assumenda pariatur est harum quibusdam
-								saepe dicta eos. Fugit, repellendus similique eveniet recusandae nam aspernatur?
-							</p>
-						</div>
+				> */}
+				<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
+					<div>
+						<img src={vincenian1.src} alt="" />
 					</div>
-					<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
-						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="pt-4">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae labore recusandae
-								voluptas ex quam, consectetur iure tempora saepe est qui harum vel incidunt expedita
-								minus aspernatur? Ipsum quia rem earum.
-							</p>
-						</div>
-						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="pt-4">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quos eum iste
-								corrupti consequuntur, consequatur pariatur nemo odio fugit magni adipisci
-								voluptatibus velit inventore exercitationem hic dicta consectetur temporibus
-								corporis?
-							</p>
-						</div>
-						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="pt-4">
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae,
-								reprehenderit, atque error, dolore eaque assumenda pariatur est harum quibusdam
-								saepe dicta eos. Fugit, repellendus similique eveniet recusandae nam aspernatur?
-							</p>
-						</div>
+					<div>
+						<img src={vincenian3.src} alt="" />
 					</div>
-				</Carousel>
+					<div>
+						<img src={vincenian4.src} alt="" />
+					</div>
+				</div>
+
+				{/* </Carousel> */}
+				<div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
+					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
+						<h3 className="uppercase">Initial supply</h3>
+						<p>666</p>
+					</div>
+					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
+						<h3 className="uppercase">Traits</h3>
+						<p>TBA</p>
+					</div>
+					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
+						<h3 className="uppercase">Mint price</h3>
+						<p>TBA</p>
+					</div>
+					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
+						<h3 className="uppercase">Launch</h3>
+						<p>TBA</p>
+					</div>
+				</div>
 			</div>
 			{/* End Become a Vincenian */}
-
 			{/* Vaniac Russian Roulette	 */}
-			<div className="container mx-auto pt-6">
+			{/* <div className="container mx-auto pt-6">
 				<h2 className="text-xl text-center">- Vaniac Russian Roulette -</h2>
 				<div className="grid grid-cols-7 lg:gap-20 sm:gap-10 gap-5 pt-4 h-96 content-center">
 					<div className="col-span-2 text-center">
@@ -174,53 +130,60 @@ const Home: NextPage = () => {
 						dolore animi, ducimus labore ex sequi.
 					</p>
 				</div>
-			</div>
+			</div> */}
 			{/* End Vaniac Russian Roulette	 */}
-
-			{/* FAQ */}
-			<div className="container mx-auto pt-8">
-				<h2 className="text-xl">- FAQ -</h2>
-				<div className=" h-96 mt-6 bg-slate-300 content-center"></div>
+			<div className="container mx-auto">
+				<hr style={{ backgroundColor: '#DFC7AB' }} />
 			</div>
-			{/* End FAQ */}
-
+			{/* Road map */}
+			<div className="container mx-auto py-8">
+				<h2 className="text-xl py-8">- Roadmap -</h2>
+				<p className="uppercase text-7xl pt-4 font-bold py-8">Coming soon...</p>
+			</div>
+			{/* End Road map */}
+			{/* Whitepaper */}
+			<div className="container mx-auto py-8">
+				<h2 className="text-xl text-right py-8">- Whitepaper -</h2>
+				<p className="uppercase text-right text-7xl pt-4 font-bold py-8">Coming soon...</p>
+			</div>
+			{/* End Whitepaper */}
+			<div className="container mx-auto">
+				<hr style={{ backgroundColor: '#DFC7AB' }} />
+			</div>
 			{/* Team */}
 			<div className="container mx-auto pt-8">
-				<h2 className="text-xl">- TEAM -</h2>
-				<div className="mt-6 bg-slate-300 content-center">
+				<h2 className="text-xl uppercase">- The TEAM -</h2>
+				<div className="mt-6 content-center" style={{ backgroundColor: '#424242' }}>
 					<div className="grid grid-cols-4 lg:gap-20 sm:gap-10 gap-5 p-4">
 						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="m-4 text-center bg-yellow-400">Mofo 1</p>
+							<img src={vincenian1.src} alt="" />
+							<p className="m-4 text-center bg-yellow-800 px-6">&nbsp;</p>
 						</div>
 						<div>
 							<img
 								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
 								alt=""
 							/>
-							<p className="m-4 text-center bg-cyan-400">Mofo 2</p>
+							<p className="m-4 text-center bg-cyan-800 px-6">&nbsp;</p>
 						</div>
 						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="m-4 text-center bg-orange-400">Mofo 3</p>
+							<img src={vincenian3.src} alt="" />
+							<p className="m-4 text-center bg-orange-800 px-6">&nbsp;</p>
 						</div>
 						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="m-4 text-center bg-blue-400">Mofo 4</p>
+							<img src={vincenian4.src} alt="" />
+							<p className="m-4 text-center bg-blue-800 px-6">&nbsp;</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			{/* End Team */}
+			{/* FAQ */}
+			<div className="container mx-auto pt-8">
+				<h2 className="text-xl">- FAQ -</h2>
+				<div className=" h-96 mt-6 content-center" style={{ backgroundColor: '#403829' }}></div>
+			</div>
+			{/* End FAQ */}
 		</div>
 	);
 };
