@@ -3,15 +3,12 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { signIn, signOut, useSession } from 'next-auth/react';
 
-import { project } from '../utils/const';
 import { useRouter } from 'next/router';
 import Head from '../components/Head';
-import Header from '../components/Header';
+import Header from '../components/Home/Header';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import backgroundImage from '../public/assets/images/background.jpg';
 import gunShotRight from '../public/assets/images/gunshot_right.png';
-import gunShotLeft from '../public/assets/images/gunshot_left.png';
 import vinceniaAbout from '../public/assets/images/vincenia.jpg';
 
 import vincenian1 from '../public/assets/images/vincenian/1.jpg';
@@ -50,7 +47,7 @@ const Home: NextPage = () => {
 					/>
 				</div>
 
-				<div className="grid mr-20">
+				<div>
 					<p>
 						Vincenia is a decentralized, open-source, and decentralized Lorem ipsum dolor sit, amet
 						consectetur adipisicing elit. Temporibus quibusdam quod laborum veniam doloribus
@@ -88,19 +85,19 @@ const Home: NextPage = () => {
 				{/* </Carousel> */}
 				<div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase">Initial supply</h3>
+						<h3 className="uppercase font-bold">Initial supply</h3>
 						<p>666</p>
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase">Traits</h3>
+						<h3 className="uppercase font-bold">Traits</h3>
 						<p>TBA</p>
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase">Mint price</h3>
+						<h3 className="uppercase font-bold">Mint price</h3>
 						<p>TBA</p>
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase">Launch</h3>
+						<h3 className="uppercase font-bold">Launch</h3>
 						<p>TBA</p>
 					</div>
 				</div>
@@ -138,13 +135,13 @@ const Home: NextPage = () => {
 			{/* Road map */}
 			<div className="container mx-auto py-8">
 				<h2 className="text-xl py-8">- Roadmap -</h2>
-				<p className="uppercase text-7xl pt-4 font-bold py-8">Coming soon...</p>
+				<p className="uppercase text-6xl pt-4 font-bold py-8">Coming soon...</p>
 			</div>
 			{/* End Road map */}
 			{/* Whitepaper */}
 			<div className="container mx-auto py-8">
 				<h2 className="text-xl text-right py-8">- Whitepaper -</h2>
-				<p className="uppercase text-right text-7xl pt-4 font-bold py-8">Coming soon...</p>
+				<p className="uppercase text-right text-6xl pt-4 font-bold py-8">Coming soon...</p>
 			</div>
 			{/* End Whitepaper */}
 			<div className="container mx-auto">
@@ -154,7 +151,7 @@ const Home: NextPage = () => {
 			<div className="container mx-auto pt-8">
 				<h2 className="text-xl uppercase">- The TEAM -</h2>
 				<div className="mt-6 content-center" style={{ backgroundColor: '#424242' }}>
-					<div className="grid grid-cols-4 lg:gap-20 sm:gap-10 gap-5 p-4">
+					<div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-20 sm:gap-10 gap-5 p-4">
 						<div>
 							<img src={vincenian1.src} alt="" />
 							<p className="m-4 text-center bg-yellow-800 px-6">&nbsp;</p>
