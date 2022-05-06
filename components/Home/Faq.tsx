@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { useState } from 'react';
 import styles from '../../styles/Home.module.css';
 
 const faqs = [
@@ -25,18 +26,25 @@ const faqs = [
 	},
 ];
 
+const FaqItems = ({ question, answer, key }: { question: string; answer: string; key: number }) => {
+	const [show, setShow] = useState(false);
+	return (
+		<div onClick={() => setShow(!show)} key={key} className="py-3">
+			<h6>
+				{show ? `-` : `+`} {question}
+			</h6>
+			{show && <p className="pl-2 animate-fade">{answer}</p>}
+		</div>
+	);
+};
+
 const Faq: NextPage = () => {
 	return (
-		<div className="container mx-auto pt-8">
+		<div className="container pt-8">
 			<h2 className="text-xl">- FAQ -</h2>
 			<div className=" p-5 mt-6 content-center" style={{ backgroundColor: '#403829' }}>
-				{faqs.map((value) => {
-					return (
-						<div className="py-3">
-							<h6>- [ ] {value.question}</h6>
-							<p className="pl-2">{value.answer}</p>
-						</div>
-					);
+				{faqs.map((value, index) => {
+					return <FaqItems question={value.question} answer={value.answer} key={index} />;
 				})}
 			</div>
 		</div>

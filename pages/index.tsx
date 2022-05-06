@@ -25,7 +25,7 @@ const Home: NextPage = () => {
 
 	return (
 		<div
-			className="mx-auto p-6"
+			className="p-6"
 			style={{
 				backgroundColor: '#2D2D36',
 				color: '#DFC7AB',
@@ -37,16 +37,10 @@ const Home: NextPage = () => {
 			<Head />
 			<Header />
 			{/* About Vincenia */}
-			<div className="container mx-auto">
+			<div className="container">
 				<img src={vinceniaAbout.src} alt="" />
 				<div style={{ position: 'relative', zIndex: 1 }}>
 					<h2 className="text-xl font-bold py-8">About Vincenia</h2>
-					<img
-						src={gunShotRight.src}
-						style={{ position: 'absolute', top: 35 }}
-						className="lg:visible invisible"
-						alt=""
-					/>
 				</div>
 
 				<div>
@@ -60,9 +54,9 @@ const Home: NextPage = () => {
 			</div>
 			{/* End about Vincenia */}
 			{/* Become a Vincenian */}
-			<div className="container mx-auto py-8">
+			<div className="container py-8">
 				{/* <h2 className="text-xl text-center">Become a Vincenian</h2> */}
-				{/* <Carousel
+				<Carousel
 					renderItem={customRenderItem}
 					autoPlay={true}
 					showArrows={false}
@@ -71,20 +65,30 @@ const Home: NextPage = () => {
 					showStatus={false}
 					swipeable={true}
 					infiniteLoop={true}
-				> */}
-				<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
-					<div>
-						<img src={vincenian1.src} alt="" />
+				>
+					<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
+						<div>
+							<img src={vincenian1.src} alt="" />
+						</div>
+						<div>
+							<img src={vincenian3.src} alt="" />
+						</div>
+						<div>
+							<img src={vincenian4.src} alt="" />
+						</div>
 					</div>
-					<div>
-						<img src={vincenian3.src} alt="" />
+					<div className="grid grid-cols-3 lg:gap-20 sm:gap-10 gap-5 pt-4">
+						<div>
+							<img src={vincenian4.src} alt="" />
+						</div>
+						<div>
+							<img src={vincenian3.src} alt="" />
+						</div>
+						<div>
+							<img src={vincenian1.src} alt="" />
+						</div>
 					</div>
-					<div>
-						<img src={vincenian4.src} alt="" />
-					</div>
-				</div>
-
-				{/* </Carousel> */}
+				</Carousel>
 				<div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
 						<h3 className="font-bold">Initial supply</h3>
@@ -131,22 +135,22 @@ const Home: NextPage = () => {
 				</div>
 			</div> */}
 			{/* End Vaniac Russian Roulette	 */}
-			<div className="container mx-auto">
+			<div className="container">
 				<hr style={{ backgroundColor: '#DFC7AB' }} />
 			</div>
 			{/* Road map */}
-			<div className="container mx-auto py-8">
+			<div className="container py-8">
 				<h2 className="text-xl py-8">- Roadmap -</h2>
 				<p className="text-6xl pt-4 font-bold py-8">Coming soon...</p>
 			</div>
 			{/* End Road map */}
 			{/* Whitepaper */}
-			<div className="container mx-auto py-8">
+			<div className="container py-8">
 				<h2 className="text-xl text-right py-8">- Whitepaper -</h2>
 				<p className="text-right text-6xl pt-4 font-bold py-8">Coming soon...</p>
 			</div>
 			{/* End Whitepaper */}
-			<div className="container mx-auto">
+			<div className="container">
 				<hr style={{ backgroundColor: '#DFC7AB' }} />
 			</div>
 			<Team />

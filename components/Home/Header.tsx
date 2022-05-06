@@ -5,7 +5,7 @@ import discordLogo from '../../public/assets/images/socialmedia/discord.png';
 
 const Header: NextPage = () => {
 	return (
-		<div className="flex flex-row justify-between container mx-auto pb-10 mb-8 items-center">
+		<div className="flex flex-row justify-between container pb-10 mb-8 items-center">
 			<img src={Logo.src} style={{ width: 200 }} />
 			<div className="grid grid-cols-2 gap-4 flex items-center">
 				<a href="https://discord.gg/thevincenia" target="_blank" rel="noopener noreferrer">
