@@ -1,3 +1,10 @@
+.dt::before {
+	content: 'Question: ';
+}
+.dd::before {
+	content: 'Answer: ';
+}
+
 .container {
 	padding: 0 2rem;
 }

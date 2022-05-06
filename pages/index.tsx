@@ -14,6 +14,8 @@ import vinceniaAbout from '../public/assets/images/vincenia.jpg';
 import vincenian1 from '../public/assets/images/vincenian/1.jpg';
 import vincenian3 from '../public/assets/images/vincenian/3.jpg';
 import vincenian4 from '../public/assets/images/vincenian/4.jpg';
+import Team from '../components/Home/Team';
+import Faq from '../components/Home/Faq';
 
 const customRenderItem = (item: any, props: any) => <item.type {...item.props} {...props} />;
 
@@ -85,19 +87,19 @@ const Home: NextPage = () => {
 				{/* </Carousel> */}
 				<div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase font-bold">Initial supply</h3>
+						<h3 className="font-bold">Initial supply</h3>
 						<p>666</p>
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase font-bold">Traits</h3>
+						<h3 className="font-bold">Traits</h3>
 						<p>TBA</p>
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase font-bold">Mint price</h3>
+						<h3 className="font-bold">Mint price</h3>
 						<p>TBA</p>
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
-						<h3 className="uppercase font-bold">Launch</h3>
+						<h3 className="font-bold">Launch</h3>
 						<p>TBA</p>
 					</div>
 				</div>
@@ -135,52 +137,20 @@ const Home: NextPage = () => {
 			{/* Road map */}
 			<div className="container mx-auto py-8">
 				<h2 className="text-xl py-8">- Roadmap -</h2>
-				<p className="uppercase text-6xl pt-4 font-bold py-8">Coming soon...</p>
+				<p className="text-6xl pt-4 font-bold py-8">Coming soon...</p>
 			</div>
 			{/* End Road map */}
 			{/* Whitepaper */}
 			<div className="container mx-auto py-8">
 				<h2 className="text-xl text-right py-8">- Whitepaper -</h2>
-				<p className="uppercase text-right text-6xl pt-4 font-bold py-8">Coming soon...</p>
+				<p className="text-right text-6xl pt-4 font-bold py-8">Coming soon...</p>
 			</div>
 			{/* End Whitepaper */}
 			<div className="container mx-auto">
 				<hr style={{ backgroundColor: '#DFC7AB' }} />
 			</div>
-			{/* Team */}
-			<div className="container mx-auto pt-8">
-				<h2 className="text-xl uppercase">- The TEAM -</h2>
-				<div className="mt-6 content-center" style={{ backgroundColor: '#424242' }}>
-					<div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-20 sm:gap-10 gap-5 p-4">
-						<div>
-							<img src={vincenian1.src} alt="" />
-							<p className="m-4 text-center bg-yellow-800 px-6">&nbsp;</p>
-						</div>
-						<div>
-							<img
-								src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960"
-								alt=""
-							/>
-							<p className="m-4 text-center bg-cyan-800 px-6">&nbsp;</p>
-						</div>
-						<div>
-							<img src={vincenian3.src} alt="" />
-							<p className="m-4 text-center bg-orange-800 px-6">&nbsp;</p>
-						</div>
-						<div>
-							<img src={vincenian4.src} alt="" />
-							<p className="m-4 text-center bg-blue-800 px-6">&nbsp;</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			{/* End Team */}
-			{/* FAQ */}
-			<div className="container mx-auto pt-8">
-				<h2 className="text-xl">- FAQ -</h2>
-				<div className=" h-96 mt-6 content-center" style={{ backgroundColor: '#403829' }}></div>
-			</div>
-			{/* End FAQ */}
+			<Team />
+			<Faq />
 		</div>
 	);
 };
