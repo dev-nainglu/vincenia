@@ -6,7 +6,7 @@ const Head: NextPage<HeadProps> = ({ title }) => {
 	return (
 		<Header>
 			<title>{title}</title>
-			<meta name="description" content="Vincenia NFT" />
+			<meta name="description" content="Keep it simple, son." />
 			<link rel="icon" href="/favicon.ico" />
 		</Header>
 	);
