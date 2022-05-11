@@ -1,10 +1,9 @@
 import { NextPage } from 'next';
 import { useState } from 'react';
-import styles from '../../styles/Home.module.css';
 
 const faqs = [
 	{
-		question: `What is Vincenia`,
+		question: `What is Vincenia?`,
 		answer: `The Vincenia is a 5555 unique pfp collection of outlaws assembled to carry out the wills of Vincent. A top of the notch community in Solana's NFT space? It's our desire.`,
 	},
 	{
@@ -16,7 +15,7 @@ const faqs = [
 		answer: `TBA`,
 	},
 	{
-		question: `What is the minT price?`,
+		question: `What is the mint price?`,
 		answer: `TBA`,
 	},
 	{
@@ -41,7 +40,7 @@ const FaqItems = ({ question, answer, key }: { question: string; answer: string;
 const Faq: NextPage = () => {
 	return (
 		<div className="container pt-8">
-			<h2 className="text-xl">- FAQ -</h2>
+			<h2 className="text-3xl">FAQ</h2>
 			<div className=" p-5 mt-6 content-center" style={{ backgroundColor: '#403829' }}>
 				{faqs.map((value, index) => {
 					return <FaqItems question={value.question} answer={value.answer} key={index} />;
