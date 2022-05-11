@@ -10,14 +10,15 @@ import Sush from '../../public/assets/images/team/Sush.jpg';
 const teams = [
 	{
 		name: 'Enzo | CEO',
-		description: 'Professional in Strategist Business Management The Master Mind Behind Vincenia',
+		description: 'Professional in Strategist Business Management.',
+		text: 'The Master Mind Behind Vincenia.',
 		image: Enzo.src,
 	},
 
 	{
 		name: 'Richie | COO',
 		description:
-			'Business analyst, with huge experience in branding and marketing. Mainly focus on project development and PR.',
+			'Business analyst with huge experience in branding and marketing. Mainly focus on project development and PR.',
 		image: Richie.src,
 	},
 	{
@@ -68,6 +69,7 @@ const Team: NextPage = () => {
 									<div>
 										<h4 className="text-2xl">{value.name}</h4>
 										<p className="text-base">{value.description}</p>
+										<p className="text-base">{value.text}</p>
 									</div>
 								</div>
 							</div>
