@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import VNCA from '../../public/assets/images/VNCA.png';
+import VNCA from '../../public/assets/images/VCNA.jpg';
 import Marquee from 'react-fast-marquee';
 
 const ComingSoon: NextPage = () => {
