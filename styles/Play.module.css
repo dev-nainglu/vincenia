@@ -1,0 +1,26 @@
+.pointsInfo {
+	font-weight: bold;
+	color: white;
+	margin: 0;
+}
+
+.button {
+	color: orange;
+}
+
+.round {
+	display: inline;
+	margin: 2rem;
+}
+
+.roundActive {
+	display: inline;
+	margin: 2rem;
+	background-color: black;
+	color: white;
+	border: 1px solid;
+}
+
+.center {
+	text-align: center;
+}
