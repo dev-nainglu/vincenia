@@ -80,10 +80,9 @@ const Play: NextPage = () => {
 	};
 
 	return (
-		<>
+		<div className=" grid justify-center ">
 			{didWin !== false && currentRound !== logic.maxRound && (
-				<div>
-					<br />
+				<div className="mb-5">
 					{Array.from({ length: logic.maxRound }, (_, i) => i + 1).map((val, index) => {
 						return (
 							<p
@@ -97,18 +96,17 @@ const Play: NextPage = () => {
 				</div>
 			)}
 
-			<h6 className="center">{loading ? getRandomLoadingMsg() : getResultString(didWin)}</h6>
+			<h6 className="text-center">{loading ? getRandomLoadingMsg() : getResultString(didWin)}</h6>
 
 			{didWin !== false && currentRound !== logic.maxRound && (
-				<button onClick={startRoll} disabled={loading}>
+				<button className="mt-5 bg-paleGray text-milk" onClick={startRoll} disabled={loading}>
 					{loading ? button.loading : !didWin ? button.start : button.retry}
 				</button>
 			)}
-			<br />
-			<button onClick={restartSession} disabled={loading}>
+			<button className="mt-5 bg-paleGray text-milk" onClick={restartSession} disabled={loading}>
 				{button.cancel}
 			</button>
-		</>
+		</div>
 	);
 };
 

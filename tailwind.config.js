@@ -6,6 +6,10 @@ module.exports = {
 			padding: '1rem',
 		},
 		extend: {
+			colors: {
+				milk: '#DFC7AB',
+				paleGray: '#3F3F3F',
+			},
 			animation: {
 				fade: 'fadeIn 0.5s ease-in-out',
 			},

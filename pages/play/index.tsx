@@ -27,33 +27,43 @@ const Game: NextPage = () => {
 		dispatch(updateLoadingStatus(false));
 	};
 
+	const getVideo = () => {
+		console.log(didWin);
+		if (didWin === true) {
+			return `/assets/videos/win.mp4`;
+		}
+		return `/assets/videos/lose.mp4`;
+	};
+
 	const backgroundStyle = {
 		backgroundImage: `url(${Background.src})`,
+		// backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
-		backgroundRepeat: 'no-repeat',
 	};
 
 	return loading === true ? (
 		<ReactPlayer
-			width={'100%'}
-			height={'100%'}
 			muted
 			onEnded={stopLoading}
 			playing={true}
 			style={{
+				minWidth: '100%',
+				minHeight: '100%',
 				position: 'fixed',
-				zIndex: -1,
+				right: 0,
+				bottom: 0,
 			}}
-			url={'/assets/videos/loading.mp4'}
+			url={getVideo()}
 		/>
 	) : (
-		<div className={styles.container} style={backgroundStyle}>
-			<Head title={play.headTitle} />
-			<main className={styles.main}>
-				<Points points={pointsData} wageAmount={wageAmount} didWin={didWin} />
-				<br /> <br />
-				{wageAmount ? <Play /> : <Wage />}
-			</main>
+		<div style={backgroundStyle} className="h-screen grid content-center justify-center text-milk">
+			<div className="bg-black/70 p-10 mt-10">
+				<Head title={play.headTitle} />
+				<main className="container ">
+					<Points points={pointsData} wageAmount={wageAmount} didWin={didWin} />
+					{wageAmount ? <Play /> : <Wage />}
+				</main>
+			</div>
 		</div>
 	);
 };

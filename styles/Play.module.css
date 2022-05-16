@@ -1,6 +1,5 @@
 .pointsInfo {
 	font-weight: bold;
-	color: white;
 	margin: 0;
 }
 
@@ -16,8 +15,10 @@
 .roundActive {
 	display: inline;
 	margin: 2rem;
-	background-color: black;
-	color: white;
+	min-width: 2rem;
+	background-color: #dfc7ab;
+	color: #3f3f3f;
+	padding: 0.5rem;
 	border: 1px solid;
 }
 
