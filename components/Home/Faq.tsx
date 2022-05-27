@@ -12,11 +12,11 @@ const faqs = [
 	},
 	{
 		question: `When is the mint date?`,
-		answer: `TBA`,
+		answer: `31st May 2022`,
 	},
 	{
 		question: `What is the mint price?`,
-		answer: `TBA`,
+		answer: `2.5 SOL`,
 	},
 	{
 		question: `Where will the Vincenia be launching?`,
