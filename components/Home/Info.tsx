@@ -15,11 +15,11 @@ const Info: NextPage = () => {
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
 						<h3 className="font-bold">Mint price</h3>
-						<p>TBA</p>
+						<p>2.5 SOL</p>
 					</div>
 					<div style={{ backgroundColor: '#3F3F3F' }} className="rounded-lg my-6 px-6 py-4">
 						<h3 className="font-bold">Launch</h3>
-						<p>TBA</p>
+						<p>31st May 2022</p>
 					</div>
 				</div>
 			</div>
