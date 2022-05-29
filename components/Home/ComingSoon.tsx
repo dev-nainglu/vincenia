@@ -1,5 +1,29 @@
 import { NextPage } from 'next';
 import pub from '../../public/assets/images/Pub.jpg';
+import Countdown from 'react-countdown';
+import { DateTime } from 'luxon';
+
+const Completionist = () => (
+	<a href="">
+		<span className="text-center text-5xl font-bold py-8 underline">MINT</span>
+	</a>
+);
+const EndDate = DateTime.fromRFC2822('Wed, 01 Jun 2022 00:30:00 +0630').toISO();
+// const EndDate = DateTime.fromRFC2822('Sun, 29 May 2022 12:07:50 +0630').toISO();
+
+const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
+	if (completed) {
+		// Render a completed state
+		return <Completionist />;
+	} else {
+		// Render a countdown
+		return (
+			<span className="text-center text-5xl font-bold py-8">
+				{`${days ? days + ' days ' : ''} ${hours} hours ${minutes} mintes ${seconds} seconds`}
+			</span>
+		);
+	}
+};
 
 const ComingSoon: NextPage = () => {
 	return (
@@ -7,22 +31,13 @@ const ComingSoon: NextPage = () => {
 			style={{
 				backgroundImage: `url(${pub.src})`,
 				backgroundSize: 'cover',
-				height: 900,
+				height: 1100,
 			}}
-			className="content-center py-20"
+			className="grid place-items-center h-screen py-20"
 		>
-			{/* Road map */}
-			<div className="container py-8">
-				<h2 className="text-xl py-8">- Roadmap -</h2>
-				<p className="text-6xl pt-4 font-bold py-8">Coming soon...</p>
+			<div className="container flex justify-center py-8">
+				<Countdown zeroPadTime={2} date={EndDate} renderer={renderer} />
 			</div>
-			{/* End Road map */}
-			{/* Whitepaper */}
-			<div className="container py-8">
-				<h2 className="text-xl text-right py-8">- Whitepaper -</h2>
-				<p className="text-right text-6xl pt-4 font-bold py-8">Coming soon...</p>
-			</div>
-			{/* End Whitepaper */}
 		</div>
 	);
 };
