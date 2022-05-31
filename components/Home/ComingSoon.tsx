@@ -4,12 +4,12 @@ import Countdown from 'react-countdown';
 import { DateTime } from 'luxon';
 
 const Completionist = () => (
-	<a href="">
+	<a href="https://mint.creatormachine.com/vincenia">
 		<span className="text-center text-5xl font-bold py-8 underline">MINT</span>
 	</a>
 );
 const EndDate = DateTime.fromRFC2822('Wed, 01 Jun 2022 00:30:00 +0630').toISO();
-// const EndDate = DateTime.fromRFC2822('Sun, 29 May 2022 12:07:50 +0630').toISO();
+// const EndDate = DateTime.fromRFC2822('Tue, 31 May 2022 21:50:15 +0630').toISO();
 
 const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
 	if (completed) {
