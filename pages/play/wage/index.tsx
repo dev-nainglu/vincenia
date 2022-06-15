@@ -30,13 +30,15 @@ const Wage: NextPage = () => {
 				}}
 				disabled
 			/>
-			<button
-				className="mt-5 bg-paleGray text-milk"
+			<button class="pushable" 
 				onClick={setWage}
 				disabled={userWage > pointsData}
 			>
-				{button.wage}
+				<span class="front">
+					{button.wage}
+				</span>
 			</button>
+			
 		</div>
 	);
 };

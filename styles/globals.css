@@ -9,6 +9,20 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'DancingScript';
+	src: url('../public/assets/fonts/DancingScript-Medium.ttf');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../public/assets/fonts/Montserrat-Light.ttf');
+	font-weight: 400;
+	font-style: normal;
+}
+
 html,
 body {
 	background-color: black;
@@ -18,4 +32,81 @@ body {
 		Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 	font-family: BarlowCondensed, sans-serif;
 	font-size: 1.4rem;
+}
+
+.pushable {
+	background: rgb(117, 32, 32);
+	border-radius: 12px;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline-offset: 4px;
+}
+.front {
+	display: block;
+	padding: 12px 42px;
+	border-radius: 12px;
+	font-size: 1.25rem;
+	background: rgb(226, 73, 73);
+	transform: translateY(-6px);
+}
+
+.pushable:active .front {
+	transform: translateY(-2px);
+}
+
+.pushable.expand, .pushable-low.expand{
+	width: 100%;
+}
+
+.pushable-low {
+	background: rgb(51, 48, 48);
+	border-radius: 12px;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline-offset: 4px;
+}
+.front-low {
+	display: block;
+	padding: 12px 42px;
+	border-radius: 12px;
+	font-size: 1.25rem;
+	background: rgb(63, 63, 63);
+	transform: translateY(-6px);
+}
+
+.pushable-low:active .front-low {
+	transform: translateY(-2px);
+}
+
+.playScreen{
+	min-width: 500px;
+}
+
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: transparent; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+.title{
+	font-family: 'DancingScript';
+}
+
+.title.result{
+	font-size: 2em;
 }
