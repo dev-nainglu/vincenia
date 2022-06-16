@@ -108,9 +108,7 @@ const Play: NextPage = () => {
 					)}
 					
 				</main>
-				{didWin !== false && (
-					<Points points={pointsData} wageAmount={wageAmount} didWin={didWin} />
-				)}
+				<Points points={pointsData} wageAmount={wageAmount} didWin={didWin} />
 				{didWin !== false && currentRound !== logic.maxRound && (
 					<button className="mt-5 expand bg-paleGray text-milk pushable" onClick={startRoll} disabled={loading}>
 						<span className="front">
@@ -126,7 +124,11 @@ const Play: NextPage = () => {
 							Play Again!
 						</span>
 					</button>
-					<h4 onClick={setIntroStatus} className={playStyles.howtobutt}>Main Menu</h4>
+					<button className="expand mt-3 bg-paleGray text-milk pushable-low" onClick={setIntroStatus} disabled={loading}>
+						<span className='front-low'>
+							Main Menu
+						</span>
+					</button>
 					</div>
 				)}
 				

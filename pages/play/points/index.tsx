@@ -26,24 +26,25 @@ const Points: NextPage<PointsProp> = ({ points, wageAmount, didWin }) => {
 
 	return (
 		<div className="mb-5">
-			<div className={playStyles.balance}>
+			<div className={didWin !== false ? playStyles.balance : playStyles.finalbalance}>
 				<h4 className={playStyles.text}>Balance</h4>
 				<p>{points}</p>
 			</div>
-			<div className={playStyles.balance + ' ' + playStyles.wage}>
-				<h4 className={playStyles.text}>Bet Amount</h4>
-				<div className={playStyles.wageContainer}>
-					{didWin !== true && (
-						<div className={playStyles.keys}>
-							<div onClick={increaseBet}>+</div>
-							<div onClick={reduceBet}>-</div>
-						</div>
-					)}
-					<p>{wageAmount}</p>
+			{didWin !== false && (
+				<div className={playStyles.balance + ' ' + playStyles.wage}>
+					<h4 className={playStyles.text}>Bet Amount</h4>
+					<div className={playStyles.wageContainer}>
+						{didWin !== true && (
+							<div className={playStyles.keys}>
+								<div onClick={increaseBet}>+</div>
+								<div onClick={reduceBet}>-</div>
+							</div>
+						)}
+						<p>{wageAmount}</p>
+					</div>
 				</div>
-				
-				
-			</div>
+			)}
+			
 		</div>
 	);
 };

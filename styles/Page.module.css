@@ -18,6 +18,8 @@
 
 .welcomePage{
     width: auto;
+    height: 400px;
+    padding-top: 50px;
 }
 
 .howToPage{

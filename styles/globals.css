@@ -80,6 +80,10 @@ body {
 	transform: translateY(-2px);
 }
 
+.pushable.homebutt{
+	width: 400px;
+}
+
 .playScreen{
 	min-width: 500px;
 }
