@@ -21,7 +21,7 @@ const Play: NextPage = () => {
 	const dispatch = useDispatch();
 	const { data: session, status } = useSession();
 	const loading = useSelector((state: RootState) => state.play.loading);
-	const pointsData = useSelector<number>((state: RootState) => state.play.points);
+	const pointsData = useSelector((state: RootState) => state.play.points);
 	const wageAmount = useSelector((state: RootState) => state.play.wageAmount);
 	const currentRound = useSelector((state: any) => state.play.currentRound);
 	const didWin = useSelector((state: any) => state.play.didWin);
