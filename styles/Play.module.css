@@ -1,6 +1,5 @@
 .pointsInfo {
 	font-weight: bold;
-	color: white;
 	margin: 0;
 }
 
@@ -16,11 +15,84 @@
 .roundActive {
 	display: inline;
 	margin: 2rem;
-	background-color: black;
-	color: white;
+	min-width: 2rem;
+	background-color: #dfc7ab;
+	color: #3f3f3f;
+	padding: 0.5rem;
 	border: 1px solid;
 }
 
 .center {
 	text-align: center;
+}
+
+.balance{
+	float: left;
+	border: 1px solid black;
+	padding: 5px;
+	width: 50%;
+	text-align: center;
+	font-size: 14pt;
+	background-color: black;
+}
+.finalbalance{
+	float: left;
+	border: 1px solid black;
+	padding: 5px;
+	width: 100%;
+	text-align: center;
+	font-size: 14pt;
+	background-color: black;
+}
+.wageContainer{
+	width: 100%;
+
+}
+.wageContainer p{
+	width: 55%;
+	padding-right: 10px;
+	padding-top: 5px;
+	text-align: right;
+}
+.wage{
+	float: right;
+	border-left: 1px solid #dfdfdf;
+}
+
+.text {
+    font-family: Futura;
+    text-shadow: rgba(193, 47, 47, 0.5) 3px 5px 1px;
+ }
+ .keys{
+    float: right;
+    width: 45%;
+	padding-left: 10px;
+	text-align: left;
+}
+.howtobutt{
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: underline;
+    font-size: 13pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+.keys div{
+	background:rgba(249, 246, 246, 0.5);
+	width: 16px;
+	height: 16px;
+	line-height: 15px;
+	text-align: center;
+	border-radius: 8px;
+	margin-top: 3px;
+	cursor: pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+.keys div:hover{
+	background:rgba(193, 47, 47, 0.5)
 }

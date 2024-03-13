@@ -1,8 +1,8 @@
 export const play = {
 	headTitle: `Vincenia | Game`,
-	defaultTitle: `Let's shoot some people`,
-	winnerString: `Winner Winner Chicken Dinner`,
-	loserString: `Loser Loser Sore Loser`,
+	defaultTitle: `Round 1`,
+	winnerString: `Congratulations! Want to double?!`,
+	loserString: `You Failed!`,
 	loading: [
 		`Loading`,
 		`Calculating your chances`,
@@ -15,7 +15,7 @@ export const play = {
 
 export const button = {
 	loading: `Loading`,
-	start: `Start rolling`,
+	start: `Play`,
 	retry: `Roll again?`,
 	wage: `Wage`,
 	cancel: `Cancel`,
@@ -23,7 +23,7 @@ export const button = {
 
 export const logic = {
 	defaultPoints: 10000,
-	chance: 20, //1 - 99 :this is percentage value
+	chance: 50, //1 - 99 :this is percentage value
 	minRound: 1,
 	maxRound: 5,
 	waitingTime: 10, //seconds

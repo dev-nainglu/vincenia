@@ -17,8 +17,9 @@ const Wage: NextPage = () => {
 	};
 
 	return (
-		<div>
+		<div className="grid justify-center">
 			<input
+				className="text-center w-100"
 				type="number"
 				min={logic.minWageAmount}
 				max={pointsData}
@@ -29,11 +30,15 @@ const Wage: NextPage = () => {
 				}}
 				disabled
 			/>
-			<br />
-			<br />
-			<button onClick={setWage} disabled={userWage > pointsData}>
-				{button.wage}
+			<button className="pushable" 
+				onClick={setWage}
+				disabled={userWage > pointsData}
+			>
+				<span className="front">
+					{button.wage}
+				</span>
 			</button>
+			
 		</div>
 	);
 };

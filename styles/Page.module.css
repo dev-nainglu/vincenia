@@ -1,0 +1,46 @@
+.title{
+    font-family: 'DancingScript';
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.paragraph{
+    font-family: 'DancingScript';
+    font-size: 15pt;
+    padding-bottom: 30px;
+}
+
+.normalpara{
+    font-size: 14pt;
+    font-weight: 10;
+    font-family: 'Montserrat';
+}
+
+.welcomePage{
+    width: auto;
+    height: 400px;
+    padding-top: 50px;
+}
+
+.howToPage{
+    width: 550px;
+}
+
+.welcomePage .playbutton{
+    margin-top: 100px;
+}
+
+.howToContainer{
+    height: 400px;
+    overflow: scroll;
+    padding-right: 20px;
+}
+
+.howtobutt{
+    text-align: right;
+    margin-top: 30px;
+    text-decoration: underline;
+    font-size: 13pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}

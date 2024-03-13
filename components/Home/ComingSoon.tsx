@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Router from 'next/router';
 import pub from '../../public/assets/images/Pub.jpg';
 import Countdown from 'react-countdown';
 import { DateTime } from 'luxon';
@@ -26,6 +27,10 @@ const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
 };
 
 const ComingSoon: NextPage = () => {
+
+	const goPlay = () => {
+		Router.push({pathname: '/play'})
+	}
 	return (
 		<div
 			style={{
@@ -35,9 +40,17 @@ const ComingSoon: NextPage = () => {
 			}}
 			className="grid place-items-center h-screen py-20"
 		>
-			<div className="container flex justify-center py-8">
-				<Countdown zeroPadTime={2} date={EndDate} renderer={renderer} />
+			<div className="container mt-20 py-8">
+				<h2 className="text-6xl text-center">Vaniac Roulette</h2>
 			</div>
+			<div className="container py-10 text-center">
+				<button className="pushable homebutt" onClick={goPlay}>
+					<span className="front text-milk">
+						Play Now
+					</span>
+				</button>
+			</div>
+			
 		</div>
 	);
 };
